@@ -2,7 +2,7 @@ from inventory_report.inventory.product import Product
 
 
 def test_cria_produto():
-    product = Product(1, 'Faca Tramontina', 'Tramontina', '12/03/1999', 
+    product = Product(1, 'Faca Tramontina', 'Tramontina', '12/03/1999',
                       'sem validade', 1324, 'Cuidar para não se cortar')
     assert product.id == 1
     assert product.data_de_validade == 'sem validade'
