@@ -14,8 +14,6 @@ class CompleteReport(SimpleReport):
         counter = Counter(x['nome_da_empresa']
                           for x in param)
 
-        [(company, _)] = counter.most_common(1)
-
         company_str = ""
 
         for k, v in counter.items():
@@ -23,6 +21,6 @@ class CompleteReport(SimpleReport):
 
         return f"""Data de fabricação mais antiga: {min_date}
 Data de validade mais próxima: {expiration_date}
-Empresa com mais produtos: {company}
+Empresa com mais produtos: {counter.most_common(1)[0][0]}
 Produtos estocados por empresa:
 {company_str}"""
